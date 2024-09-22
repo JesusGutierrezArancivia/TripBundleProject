@@ -15,13 +15,17 @@ public class Activity {
     @Column(name = "descriptionActivity",nullable = false,length = 70)
     private String descriptionActivity;
 
+    @Column(name="costActivity",nullable=false)
+    private double costActivity;
+
     public Activity() {
     }
 
-    public Activity(int idActivity, String nameActivity, String descriptionActivity) {
+    public Activity(int idActivity, String nameActivity, String descriptionActivity,double costActivity) {
         this.idActivity = idActivity;
         this.nameActivity = nameActivity;
         this.descriptionActivity = descriptionActivity;
+        this.costActivity=costActivity;
 
     }
 
@@ -49,5 +53,11 @@ public class Activity {
         this.descriptionActivity = descriptionActivity;
     }
 
+    public int getCostActivity() {
+        return idActivity;
+    }
 
+    public void setCostActivity(double costActivity) {
+        this.costActivity = Activity.this.costActivity;
+    }
 }

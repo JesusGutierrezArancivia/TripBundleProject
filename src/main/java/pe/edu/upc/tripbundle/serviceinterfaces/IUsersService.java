@@ -15,5 +15,6 @@ public interface IUsersService {
 
         public Users listarId(Long idUsers);
 
+        public List<String[]> cantidadActividadesPorUsuario();
 
 }

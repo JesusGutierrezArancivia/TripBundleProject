@@ -11,4 +11,7 @@ public interface ISeasonService {
 
     public void update(Season season);
 
+    public List<String[]> cantidadFloraPorEstacion();
+
+    public List<String[]> cantidadFaunaPorEstacion();
 }

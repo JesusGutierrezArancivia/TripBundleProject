@@ -3,6 +3,7 @@ package pe.edu.upc.tripbundle.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "Reserve")
@@ -14,21 +15,51 @@ public class Reserve {
     @Column(name = "descriptionReserve",nullable = false,length = 70)
     private String descriptionReserve;
 
+    @ManyToOne
+    @JoinColumn(name = "idActivity")
+    private Activity activity;
+
+    @ManyToOne
+    @JoinColumn(name = "idCity")
+    private City city;
+
     @Column(name = "dateReserve",nullable = false)
     private LocalDate dateReserve;
 
-    @ManyToOne
-    @JoinColumn(name = "idAcitvity")
-    private Activity ac;
+    @Column(name = "hourReserve",nullable = false)
+    private LocalTime hourReserve;
 
     public Reserve() {
     }
 
-    public Reserve(int idReserve, String descriptionReserve, LocalDate dateReserve, Activity ac) {
+    public Activity getActivity() {
+        return activity;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public LocalTime getHourReserve() {
+        return hourReserve;
+    }
+
+    public void setHourReserve(LocalTime hourReserve) {
+        this.hourReserve = hourReserve;
+    }
+
+    public Reserve(int idReserve, String descriptionReserve, LocalDate dateReserve) {
         this.idReserve = idReserve;
         this.descriptionReserve = descriptionReserve;
         this.dateReserve = dateReserve;
-        this.ac = ac;
     }
 
     public int getIdReserve() {
@@ -53,13 +84,5 @@ public class Reserve {
 
     public void setDateReserve(LocalDate dateReserve) {
         this.dateReserve = dateReserve;
-    }
-
-    public Activity getAc() {
-        return ac;
-    }
-
-    public void setAc(Activity ac) {
-        this.ac = ac;
     }
 }
