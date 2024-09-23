@@ -11,4 +11,8 @@ public interface ICityService {
 
     public void update(City city);
 
+    public List<String[]> cantidadFloraPorCiudad();
+
+    public List<String[]> cantidadFaunaPorCiudad();
+
 }

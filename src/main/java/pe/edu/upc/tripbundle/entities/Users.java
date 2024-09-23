@@ -1,12 +1,15 @@
 package pe.edu.upc.tripbundle.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="Users")
-public class Users {
+public class Users implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsers;
@@ -26,22 +29,28 @@ public class Users {
     @Column(name = "phoneUsers", nullable = false, length=50)
     private String phoneUsers;
 
-    @Column(name = "passwordUsers", nullable = false, length=50)
+    @Column(name = "passwordUsers", nullable = false, length=200)
     private String passwordUsers;
 
     @Column(name = "birthdateUsers", nullable = false, length=50)
     private Date birthdateUsers;
 
-    @Column(name = "nicknameUsers", nullable = false, length=50)
-    private String nicknameUsers;
+    @Column(name = "username", nullable = false, length=50)
+    private String username;
 
     @Column(name = "dniUsers", nullable = false, length=50)
     private String dniUsers;
+    private Boolean enabled;
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idUsers")
+    private List<Role> roles;
+
 
     public Users() {
     }
 
-    public Users(int idUsers, String nameUsers, String lastnameUsers, String addressUsers, String emailUsers, String phoneUsers, String passwordUsers, Date birthdateUsers, String nicknameUsers, String dniUsers) {
+    public Users(int idUsers, String nameUsers, String lastnameUsers, String addressUsers, String emailUsers, String phoneUsers, String passwordUsers, Date birthdateUsers, String username, String dniUsers) {
         this.idUsers = idUsers;
         this.nameUsers = nameUsers;
         this.lastnameUsers = lastnameUsers;
@@ -50,7 +59,7 @@ public class Users {
         this.phoneUsers = phoneUsers;
         this.passwordUsers = passwordUsers;
         this.birthdateUsers = birthdateUsers;
-        this.nicknameUsers = nicknameUsers;
+        this.username = username;
         this.dniUsers = dniUsers;
     }
 
@@ -118,12 +127,12 @@ public class Users {
         this.birthdateUsers = birthdateUsers;
     }
 
-    public String getNicknameUsers() {
-        return nicknameUsers;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNicknameUsers(String nicknameUsers) {
-        this.nicknameUsers = nicknameUsers;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getDniUsers() {
@@ -132,5 +141,21 @@ public class Users {
 
     public void setDniUsers(String dniUsers) {
         this.dniUsers = dniUsers;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }
