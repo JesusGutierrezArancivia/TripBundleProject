@@ -47,6 +47,13 @@ public class ActivityController {
         aS.delete(id);
     }
 
+    @GetMapping("/{id}")
+    public ActivityDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        ActivityDTO dto = m.map(aS.listId(id), ActivityDTO.class);
+        return dto;
+    }
+
     @GetMapping("/cantidades")
     public List<QuantityActivityByReserveDTO> obtenerCantidad(){
         List<String[]>lista=aS.cantidadactividades();

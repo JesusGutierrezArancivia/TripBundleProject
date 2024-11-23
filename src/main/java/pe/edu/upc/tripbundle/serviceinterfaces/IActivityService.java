@@ -13,5 +13,7 @@ public interface IActivityService {
 
     public void delete(int id);
 
+    public Activity listId(int idActivity);
+
     public List<String[]> cantidadactividades();
 }

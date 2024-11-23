@@ -14,7 +14,7 @@ public class FloraDTO {
 
     private double latitudeFlora;
 
-    private double lenghtFlora;
+    private double lengthFlora;
 
     private String stateFlora;
 
@@ -58,12 +58,12 @@ public class FloraDTO {
         this.latitudeFlora = latitudeFlora;
     }
 
-    public double getLenghtFlora() {
-        return lenghtFlora;
+    public double getLengthFlora() {
+        return lengthFlora;
     }
 
-    public void setLenghtFlora(double lenghtFlora) {
-        this.lenghtFlora = lenghtFlora;
+    public void setLengthFlora(double lengthFlora) {
+        this.lengthFlora = lengthFlora;
     }
 
     public String getStateFlora() {

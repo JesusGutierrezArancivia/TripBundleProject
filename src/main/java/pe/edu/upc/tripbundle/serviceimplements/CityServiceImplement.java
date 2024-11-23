@@ -3,6 +3,7 @@ package pe.edu.upc.tripbundle.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.tripbundle.entities.City;
+import pe.edu.upc.tripbundle.entities.Fauna;
 import pe.edu.upc.tripbundle.repositories.ICityRepository;
 import pe.edu.upc.tripbundle.serviceinterfaces.ICityService;
 
@@ -27,6 +28,16 @@ public class CityServiceImplement implements ICityService {
     @Override
     public void update(City city) {
         cR.save(city);
+    }
+
+    @Override
+    public void delete(int idCity) {
+
+    }
+
+    @Override
+    public City listId(int idCity) {
+        return cR.findById(idCity).orElse(new City());
     }
 
     @Override

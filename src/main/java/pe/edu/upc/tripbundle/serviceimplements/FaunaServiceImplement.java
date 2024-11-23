@@ -18,12 +18,29 @@ public class FaunaServiceImplement implements IFaunaService {
     }
 
     @Override
-    public void insert(Fauna fauna) {
-        fR.save(fauna);
+    public Fauna insert(Fauna fauna) {
+        return fR.save(fauna);
+    }
+
+    @Override
+    public void delete(int idFauna) {
+        fR.deleteById(idFauna);
+    }
+
+    @Override
+    public Fauna listId(int idFauna) {
+        return fR.findById(idFauna).orElse(new Fauna());
     }
 
     @Override
     public void update(Fauna fauna) {
         fR.save(fauna);
+    }
+
+    @Override
+    public Fauna updateImage(int idFauna, byte[] image) {
+        Fauna fauna = listId(idFauna);
+        fauna.setImageFauna(image);
+        return fR.save(fauna);
     }
 }

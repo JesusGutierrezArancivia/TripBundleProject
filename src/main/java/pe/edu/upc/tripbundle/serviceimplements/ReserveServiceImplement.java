@@ -2,6 +2,7 @@ package pe.edu.upc.tripbundle.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.tripbundle.entities.Flora;
 import pe.edu.upc.tripbundle.entities.Reserve;
 import pe.edu.upc.tripbundle.repositories.IReserveRepository;
 import pe.edu.upc.tripbundle.serviceinterfaces.IReserveService;
@@ -31,5 +32,10 @@ public class ReserveServiceImplement implements IReserveService {
     @Override
     public void delete(int id) {
         rR.deleteById(id);
+    }
+
+    @Override
+    public Reserve listId(int idReserve) {
+        return rR.findById(idReserve).orElse(new Reserve());
     }
 }
