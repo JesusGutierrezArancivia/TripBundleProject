@@ -6,6 +6,8 @@ public class ActivityDTO {
 
     private int idActivity;
 
+    private double costActivity;
+
     private String nameActivity;
 
     private String descriptionActivity;
@@ -16,6 +18,14 @@ public class ActivityDTO {
 
     public void setIdActivity(int idActivity) {
         this.idActivity = idActivity;
+    }
+
+    public double getCostActivity() {
+        return costActivity;
+    }
+
+    public void setCostActivity(double costActivity) {
+        this.costActivity = costActivity;
     }
 
     public String getNameActivity() {

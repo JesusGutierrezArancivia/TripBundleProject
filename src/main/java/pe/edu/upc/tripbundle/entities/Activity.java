@@ -29,6 +29,7 @@ public class Activity {
 
     }
 
+
     public int getIdActivity() {
         return idActivity;
     }
@@ -53,11 +54,11 @@ public class Activity {
         this.descriptionActivity = descriptionActivity;
     }
 
-    public int getCostActivity() {
-        return idActivity;
+    public double getCostActivity() {
+        return costActivity;
     }
 
     public void setCostActivity(double costActivity) {
-        this.costActivity = Activity.this.costActivity;
+        this.costActivity = costActivity;
     }
 }

@@ -34,6 +34,18 @@ public class FloraController {
         flS.insert(fl);
     }
 
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
+        flS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public FloraDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        FloraDTO dto = m.map(flS.listId(id), FloraDTO.class);
+        return dto;
+    }
+
     @PutMapping
     public void modificar(@RequestBody FloraDTO dto){
         ModelMapper m=new ModelMapper();

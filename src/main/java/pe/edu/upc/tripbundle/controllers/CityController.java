@@ -36,6 +36,18 @@ public class CityController {
         cS.insert(ci);
     }
 
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {
+        cS.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public CityDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        CityDTO dto = m.map(cS.listId(id), CityDTO.class);
+        return dto;
+    }
+
     @PutMapping
     public void modificar(@RequestBody CityDTO dto){
         ModelMapper m=new ModelMapper();

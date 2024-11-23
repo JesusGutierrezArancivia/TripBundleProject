@@ -15,25 +15,30 @@ public class Fauna {
     @Column(name = "familyFauna",nullable = false,length = 70)
     private String familyFauna;
 
-    @Column(name = "latitudeCity",nullable = false,length = 200)
+    @Column(name = "latitudeFauna",nullable = false)
     private float latitudeFauna;
 
-    @Column(name = "lengthFauna",nullable = false,length = 200)
+    @Column(name = "lengthFauna",nullable = false)
     private float lengthFauna;
 
     @Column(name = "stateFauna",nullable = false,length = 70)
     private String stateFauna;
 
+    @Column(name = "imageFauna")
+    private byte[] imageFauna;
+
+
     public Fauna() {
     }
 
-    public Fauna(int idFauna, String nameFauna, String familyFauna, float latitudeFauna, float lengthFauna, String stateFauna) {
+    public Fauna(int idFauna, String nameFauna, String familyFauna, float latitudeFauna, float lengthFauna, String stateFauna, byte[] imageFauna) {
         this.idFauna = idFauna;
         this.nameFauna = nameFauna;
         this.familyFauna = familyFauna;
         this.latitudeFauna = latitudeFauna;
         this.lengthFauna = lengthFauna;
         this.stateFauna = stateFauna;
+        this.imageFauna = imageFauna;
     }
 
     public int getIdFauna() {
@@ -82,5 +87,12 @@ public class Fauna {
 
     public void setStateFauna(String stateFauna) {
         this.stateFauna = stateFauna;
+    }
+    public byte[] getImageFauna() {
+        return imageFauna;
+    }
+
+    public void setImageFauna(byte[] imageFauna) {
+        this.imageFauna = imageFauna;
     }
 }

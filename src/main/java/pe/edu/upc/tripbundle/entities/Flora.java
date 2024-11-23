@@ -18,11 +18,11 @@ public class Flora {
     @Column(name = "famimlyFlora",nullable = false,length = 70)
     private String famimlyFlora;
 
-    @Column(name = "latitudeFlora",nullable = false,length = 200)
+    @Column(name = "latitudeFlora",nullable = false)
     private double latitudeFlora;
 
-    @Column(name = "lengthFauna",nullable = false,length = 200)
-    private double lenghtFlora;
+    @Column(name = "lengthFlora",nullable = false)
+    private double lengthFlora;
 
     @Column(name = "stateFlora",nullable = false,length = 70)
     private String stateFlora;
@@ -30,13 +30,13 @@ public class Flora {
     public Flora() {
     }
 
-    public Flora(int idFlora, String nameFlora, String spicieFlora, String famimlyFlora, double latitudeFlora, double lenghtFlora, String stateFlora) {
+    public Flora(int idFlora, String nameFlora, String spicieFlora, String famimlyFlora, double latitudeFlora, double lengthFlora, String stateFlora) {
         this.idFlora = idFlora;
         this.nameFlora = nameFlora;
         this.spicieFlora = spicieFlora;
         this.famimlyFlora = famimlyFlora;
         this.latitudeFlora = latitudeFlora;
-        this.lenghtFlora = lenghtFlora;
+        this.lengthFlora = lengthFlora;
         this.stateFlora = stateFlora;
     }
 
@@ -80,12 +80,12 @@ public class Flora {
         this.latitudeFlora = latitudeFlora;
     }
 
-    public double getLenghtFlora() {
-        return lenghtFlora;
+    public double getLengthFlora() {
+        return lengthFlora;
     }
 
-    public void setLenghtFlora(double lenghtFlora) {
-        this.lenghtFlora = lenghtFlora;
+    public void setLengthFlora(double lengthFlora) {
+        this.lengthFlora = lengthFlora;
     }
 
     public String getStateFlora() {

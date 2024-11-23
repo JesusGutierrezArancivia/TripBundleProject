@@ -7,6 +7,7 @@ public class FaunaDTO {
     private float latitudeFauna;
     private float lengthFauna;
     private String stateFauna;
+    private byte[] imageFauna;
 
     public int getIdFauna() {
         return idFauna;
@@ -54,5 +55,13 @@ public class FaunaDTO {
 
     public void setStateFauna(String stateFauna) {
         this.stateFauna = stateFauna;
+    }
+
+    public byte[] getImageFauna() {
+        return imageFauna;
+    }
+
+    public void setImageFauna(byte[] imageFauna) {
+        this.imageFauna = imageFauna;
     }
 }

@@ -56,10 +56,13 @@ public class Reserve {
         this.hourReserve = hourReserve;
     }
 
-    public Reserve(int idReserve, String descriptionReserve, LocalDate dateReserve) {
+    public Reserve(int idReserve, String descriptionReserve, Activity activity, City city, LocalDate dateReserve, LocalTime hourReserve) {
         this.idReserve = idReserve;
         this.descriptionReserve = descriptionReserve;
+        this.activity = activity;
+        this.city = city;
         this.dateReserve = dateReserve;
+        this.hourReserve = hourReserve;
     }
 
     public int getIdReserve() {

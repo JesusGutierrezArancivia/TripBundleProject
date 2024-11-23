@@ -12,10 +12,10 @@ public class City {
     @Column(name = "nameCity",nullable = false,length = 70)
     private String nameCity;
 
-    @Column(name = "latitudeCity",nullable = false,length = 200)
+    @Column(name = "latitudeCity",nullable = false)
     private float latitudeCity;
 
-    @Column(name = "lengthCity",nullable = false,length = 200)
+    @Column(name = "lengthCity",nullable = false)
     private float lengthCity;
 
     @Column(name = "provinceCity",nullable = false,length = 40)

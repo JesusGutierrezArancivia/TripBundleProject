@@ -12,4 +12,6 @@ public interface IReserveService {
     public void update(Reserve reserve);
 
     public void delete(int id);
+
+    public Reserve listId(int idReserve);
 }

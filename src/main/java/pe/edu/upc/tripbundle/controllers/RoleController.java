@@ -1,4 +1,4 @@
-package pe.du.upc.demosx61.controllers;
+package pe.edu.upc.tripbundle.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
